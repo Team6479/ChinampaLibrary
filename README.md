@@ -1,6 +1,6 @@
 # ChinampaLibrary
 
-[![Release](https://jitpack.io/v/Team6479/ChinampaLibrary.svg)](https://jitpack.io/#User/Repo)
+[![Release](https://jitpack.io/v/Team6479/ChinampaLibrary.svg)](https://jitpack.io/#Team6479/ChinampaLibrary)
 
 See beautiful floating gardens of code!
 
