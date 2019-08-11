@@ -35,6 +35,27 @@ subprojects {
 	}
 }
 
+javadoc {
+    source subprojects.collect { project ->
+        project.sourceSets.main.allJava
+    }
+    
+    destinationDir = new File(buildDir, 'javadoc')
+    
+    classpath = files(subprojects.collect { project ->
+        project.sourceSets.main.compileClasspath
+    })
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+artifacts {
+    archives javadocJar
+}
+
 wrapper {
     gradleVersion = "5.5.1"
     distributionType = Wrapper.DistributionType.BIN
