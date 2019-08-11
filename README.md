@@ -1,5 +1,7 @@
 # ChinampaLibrary
 
+[![Release](https://jitpack.io/v/Team6479/ChinampaLibrary.svg)](https://jitpack.io/#User/Repo)
+
 See beautiful floating gardens of code!
 
 ## Using ChinampaLibrary
@@ -19,3 +21,13 @@ dependencies {
     compile 'com.github.Team6479:ChinampaLibrary:<version>'
 }
 ```
+
+## Docs
+
+* Aggregated Javadoc
+  * [Latest Release](https://javadoc.jitpack.io/com/github/Team6479/ChinampaLibrary/ChinampaLibrary/latest/javadoc/)
+  * [Latest Development](https://javadoc.jitpack.io/com/github/Team6479/ChinampaLibrary/ChinampaLibrary/master-SNAPSHOT/javadoc/)
+* Modules
+  * WPI
+    * [Latest Release](https://javadoc.jitpack.io/com/github/Team6479/ChinampaLibrary/wpi/latest/javadoc/)
+    * [Latest Development](https://javadoc.jitpack.io/com/github/Team6479/ChinampaLibrary/wpi/master-SNAPSHOT/javadoc/)
