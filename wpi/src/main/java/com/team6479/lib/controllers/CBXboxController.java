@@ -1,25 +1,21 @@
 package com.team6479.lib.controllers;
 
-import java.util.HashMap;
-import java.util.Objects;
-
 import com.team6479.lib.buttons.POVButton;
 import com.team6479.lib.wpioverride.XboxController;
-
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import java.util.HashMap;
+import java.util.Objects;
 
 /**
- * This class provides a {@link XboxController} that contains various enhancements
- * for command based programming.
- * 
+ * This class provides a {@link XboxController} that contains various enhancements for command based
+ * programming.
+ *
  * @author Thomas Quillan
  */
 public class CBXboxController extends XboxController {
-  /**
-   * Represents a digital button on an XboxController.
-   */
+  /** Represents a digital button on an XboxController. */
   public enum Buttons {
     kBumperLeft(5),
     kBumperRight(6),
@@ -44,7 +40,7 @@ public class CBXboxController extends XboxController {
 
   /**
    * Create a {@link XboxController} with extensions for command based programming.
-   * 
+   *
    * @param port The port on the Driver Station that the joystick is plugged into.
    */
   public CBXboxController(int port) {
@@ -55,7 +51,7 @@ public class CBXboxController extends XboxController {
 
   /**
    * Get a {@link Button} object for the supplied button
-   * 
+   *
    * @param button The ID of the button
    * @return A {@link Button} object for the supplied button.
    */
@@ -70,7 +66,7 @@ public class CBXboxController extends XboxController {
 
   /**
    * Get a {@link POVButton} object for the supplied arguments
-   * 
+   *
    * @param pov The button number (see {@link GenericHID#getPOV(int) })
    * @param angle The angle to check the POV for
    * @param fuzzy If set to True angle will be checked to be within plus or minus 45 degrees
@@ -88,7 +84,7 @@ public class CBXboxController extends XboxController {
 
   /**
    * Get a {@link POVButton} object for the supplied arguments
-   * 
+   *
    * @param angle The angle to check the POV for
    * @param fuzzy If set to True angle will be checked to be within plus or minus 45 degrees
    * @return A {@link POVButton} object for the supplied arguments.

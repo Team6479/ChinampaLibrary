@@ -1,15 +1,14 @@
 package com.team6479.lib.buttons;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * This class provides a {@link Button} which gets its state from multiple {@link Button} objects
- * 
+ *
  * @author Thomas Quillan
  */
 public class MultiButton extends Button {
@@ -32,13 +31,13 @@ public class MultiButton extends Button {
 
   /**
    * Create a multibutton for triggering commands.
-   * 
-   * @param buttons The {@link Button} objects to be tracked 
+   *
+   * @param buttons The {@link Button} objects to be tracked
    */
   public MultiButton(Button... buttons) {
     this.buttons = new ArrayList<Button>(Arrays.asList(buttons));
   }
-  
+
   @Override
   public boolean get() {
     boolean check = true;
@@ -47,5 +46,4 @@ public class MultiButton extends Button {
     }
     return check;
   }
-
 }

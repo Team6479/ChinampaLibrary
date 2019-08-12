@@ -5,7 +5,7 @@ import edu.wpi.first.wpilibj.buttons.Button;
 
 /**
  * This class provides a {@link Button} that gets its state from a {@link GenericHID}'s POV angle.
- * 
+ *
  * @author Thomas Quillan
  */
 public class POVButton extends Button {
@@ -62,8 +62,7 @@ public class POVButton extends Button {
 
     if (fuzzy) {
       return (povValue == angle || povValue + 45 == angle || povValue - 45 == angle);
-    }
-    else {
+    } else {
       return povValue == angle;
     }
   }
