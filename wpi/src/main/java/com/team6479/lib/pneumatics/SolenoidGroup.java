@@ -4,9 +4,7 @@ import edu.wpi.first.wpilibj.SendableBase;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.smartdashboard.SendableBuilder;
 
-/**
- * Allows multiple {@link Solenoid} objects to be linked together.
- */
+/** Allows multiple {@link Solenoid} objects to be linked together. */
 public class SolenoidGroup extends SendableBase {
   private final Solenoid[] solenoids;
   private static int instances;
@@ -55,12 +53,11 @@ public class SolenoidGroup extends SendableBase {
   }
 
   /**
-   * Set the pulse duration in the PCM. This is used in conjunction with
-   * the startPulse method to allow the PCM to control the timing of a pulse.
-   * The timing can be controlled in 0.01 second increments.
+   * Set the pulse duration in the PCM. This is used in conjunction with the startPulse method to
+   * allow the PCM to control the timing of a pulse. The timing can be controlled in 0.01 second
+   * increments.
    *
    * @param durationSeconds The duration of the pulse, from 0.01 to 2.55 seconds.
-   *
    * @see #startPulse()
    */
   public void setPulseDuration(double durationSeconds) {
@@ -70,8 +67,7 @@ public class SolenoidGroup extends SendableBase {
   }
 
   /**
-   * Trigger the PCM to generate a pulse of the duration set in
-   * setPulseDuration.
+   * Trigger the PCM to generate a pulse of the duration set in setPulseDuration.
    *
    * @see #setPulseDuration(double)
    */

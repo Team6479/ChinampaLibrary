@@ -5,9 +5,7 @@ import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.SendableBase;
 import edu.wpi.first.wpilibj.smartdashboard.SendableBuilder;
 
-/**
- * Allows multiple {@link DoubleSolenoid} objects to be linked together.
- */
+/** Allows multiple {@link DoubleSolenoid} objects to be linked together. */
 public class DoubleSolenoidGroup extends SendableBase {
   private final DoubleSolenoid[] doubleSolenoids;
   private static int instances;
@@ -60,14 +58,17 @@ public class DoubleSolenoidGroup extends SendableBase {
     builder.setSmartDashboardType("Double Solenoid");
     builder.setActuator(true);
     builder.setSafeState(() -> set(Value.kOff));
-    builder.addStringProperty("Value", () -> get().name().substring(1), value -> {
-      if ("Forward".equals(value)) {
-        set(Value.kForward);
-      } else if ("Reverse".equals(value)) {
-        set(Value.kReverse);
-      } else {
-        set(Value.kOff);
-      }
-    });
+    builder.addStringProperty(
+        "Value",
+        () -> get().name().substring(1),
+        value -> {
+          if ("Forward".equals(value)) {
+            set(Value.kForward);
+          } else if ("Reverse".equals(value)) {
+            set(Value.kReverse);
+          } else {
+            set(Value.kOff);
+          }
+        });
   }
 }
