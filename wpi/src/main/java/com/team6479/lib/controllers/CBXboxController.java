@@ -8,24 +8,29 @@ import java.util.HashMap;
 import java.util.Objects;
 
 /**
- * This class provides a {@link XboxController} that contains various enhancements for command based
- * programming.
+ * This class provides a {@link XboxController} that contains various
+ * enhancements for command based programming.
  *
  * @author Thomas Quillan
  */
 public class CBXboxController extends XboxController {
   private HashMap<Button, edu.wpi.first.wpilibj2.command.button.Button> buttons;
-  private HashMap<Integer, edu.wpi.first.wpilibj2.command.button.Button> povButtons;
+  private HashMap<Integer, edu.wpi.first.wpilibj2.command.button.Button>
+      povButtons;
 
   /**
-   * Create a {@link XboxController} with extensions for command based programming.
+   * Create a {@link XboxController} with extensions for command based
+   * programming.
    *
-   * @param port The port on the Driver Station that the joystick is plugged into.
+   * @param port The port on the Driver Station that the joystick is plugged
+   *     into.
    */
   public CBXboxController(int port) {
     super(port);
-    buttons = new HashMap<Button, edu.wpi.first.wpilibj2.command.button.Button>();
-    povButtons = new HashMap<Integer, edu.wpi.first.wpilibj2.command.button.Button>();
+    buttons =
+        new HashMap<Button, edu.wpi.first.wpilibj2.command.button.Button>();
+    povButtons =
+        new HashMap<Integer, edu.wpi.first.wpilibj2.command.button.Button>();
   }
 
   /**
@@ -48,11 +53,12 @@ public class CBXboxController extends XboxController {
    *
    * @param pov The button number (see {@link GenericHID#getPOV(int) })
    * @param angle The angle to check the POV for
-   * @param fuzzy If set to True angle will be checked to be within plus or minus 45 degrees
+   * @param fuzzy If set to True angle will be checked to be within plus or
+   *     minus 45 degrees
    * @return A {@link POVButton} object for the supplied arguments.
    */
-  public edu.wpi.first.wpilibj2.command.button.Button getPOVButton(
-      int pov, int angle, boolean fuzzy) {
+  public edu.wpi.first.wpilibj2.command.button.Button
+  getPOVButton(int pov, int angle, boolean fuzzy) {
     int povHash = Objects.hash(pov, angle, fuzzy);
 
     if (!povButtons.containsKey(povHash)) {
@@ -66,10 +72,12 @@ public class CBXboxController extends XboxController {
    * Get a {@link POVButton} object for the supplied arguments
    *
    * @param angle The angle to check the POV for
-   * @param fuzzy If set to True angle will be checked to be within plus or minus 45 degrees
+   * @param fuzzy If set to True angle will be checked to be within plus or
+   *     minus 45 degrees
    * @return A {@link POVButton} object for the supplied arguments.
    */
-  public edu.wpi.first.wpilibj2.command.button.Button getPOVButton(int angle, boolean fuzzy) {
+  public edu.wpi.first.wpilibj2.command.button.Button
+  getPOVButton(int angle, boolean fuzzy) {
     return this.getPOVButton(0, angle, fuzzy);
   }
 }

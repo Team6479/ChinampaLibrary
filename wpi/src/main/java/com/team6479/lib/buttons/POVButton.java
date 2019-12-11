@@ -4,7 +4,8 @@ import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj2.command.button.Button;
 
 /**
- * This class provides a {@link Button} that gets its state from a {@link GenericHID}'s POV angle.
+ * This class provides a {@link Button} that gets its state from a {@link
+ * GenericHID}'s POV angle.
  *
  * @author Thomas Quillan
  */
@@ -17,10 +18,12 @@ public class POVButton extends Button {
   /**
    * Create a POV button for triggering commands.
    *
-   * @param joystick The GenericHID object that has the button (e.g. Joystick, KinectStick, etc)
+   * @param joystick The GenericHID object that has the button (e.g. Joystick,
+   *     KinectStick, etc)
    * @param pov The button number (see {@link GenericHID#getPOV(int) })
    * @param angle The angle to check the POV for
-   * @param fuzzy If set to True angle will be checked to be within plus or minus 45 degrees
+   * @param fuzzy If set to True angle will be checked to be within plus or
+   *     minus 45 degrees
    */
   public POVButton(GenericHID joystick, int angle, boolean fuzzy, int pov) {
     this.joystick = joystick;
@@ -32,9 +35,11 @@ public class POVButton extends Button {
   /**
    * Create a POV button for triggering commands.
    *
-   * @param joystick The GenericHID object that has the button (e.g. Joystick, KinectStick, etc)
+   * @param joystick The GenericHID object that has the button (e.g. Joystick,
+   *     KinectStick, etc)
    * @param angle The angle to check the POV for
-   * @param fuzzy If set to True angle will be checked to be within plus or minus 45 degrees
+   * @param fuzzy If set to True angle will be checked to be within plus or
+   *     minus 45 degrees
    */
   public POVButton(GenericHID joystick, int angle, boolean fuzzy) {
     this.joystick = joystick;
@@ -46,7 +51,8 @@ public class POVButton extends Button {
   /**
    * Create a POV button for triggering commands.
    *
-   * @param joystick The GenericHID object that has the button (e.g. Joystick, KinectStick, etc)
+   * @param joystick The GenericHID object that has the button (e.g. Joystick,
+   *     KinectStick, etc)
    * @param angle The angle to check the POV for
    */
   public POVButton(GenericHID joystick, int angle) {
@@ -61,7 +67,8 @@ public class POVButton extends Button {
     int povValue = joystick.getPOV(pov);
 
     if (fuzzy) {
-      return (povValue == angle || povValue + 45 == angle || povValue - 45 == angle);
+      return (povValue == angle || povValue + 45 == angle ||
+              povValue - 45 == angle);
     } else {
       return povValue == angle;
     }

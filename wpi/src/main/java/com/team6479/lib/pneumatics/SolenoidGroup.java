@@ -36,7 +36,8 @@ public class SolenoidGroup implements Sendable, AutoCloseable {
   /**
    * Set the value of a solenoid.
    *
-   * @param on True will turn the solenoid output on. False will turn the solenoid output off.
+   * @param on True will turn the solenoid output on. False will turn the
+   *     solenoid output off.
    */
   public void set(boolean on) {
     for (Solenoid solenoid : solenoids) {
@@ -47,18 +48,18 @@ public class SolenoidGroup implements Sendable, AutoCloseable {
   /**
    * Read the current value of the solenoid.
    *
-   * @return True if the solenoid output is on or false if the solenoid output is off.
+   * @return True if the solenoid output is on or false if the solenoid output
+   *     is off.
    */
-  public boolean get() {
-    return solenoids[0].get();
-  }
+  public boolean get() { return solenoids[0].get(); }
 
   /**
-   * Set the pulse duration in the PCM. This is used in conjunction with the startPulse method to
-   * allow the PCM to control the timing of a pulse. The timing can be controlled in 0.01 second
-   * increments.
+   * Set the pulse duration in the PCM. This is used in conjunction with the
+   * startPulse method to allow the PCM to control the timing of a pulse. The
+   * timing can be controlled in 0.01 second increments.
    *
-   * @param durationSeconds The duration of the pulse, from 0.01 to 2.55 seconds.
+   * @param durationSeconds The duration of the pulse, from 0.01 to 2.55
+   *     seconds.
    * @see #startPulse()
    */
   public void setPulseDuration(double durationSeconds) {
@@ -68,7 +69,8 @@ public class SolenoidGroup implements Sendable, AutoCloseable {
   }
 
   /**
-   * Trigger the PCM to generate a pulse of the duration set in setPulseDuration.
+   * Trigger the PCM to generate a pulse of the duration set in
+   * setPulseDuration.
    *
    * @see #setPulseDuration(double)
    */

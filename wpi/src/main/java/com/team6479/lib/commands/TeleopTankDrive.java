@@ -9,7 +9,8 @@ public class TeleopTankDrive extends CommandBase {
   private final DoubleSupplier speed;
   private final DoubleSupplier rotation;
 
-  public TeleopTankDrive(TankDrive drivetrain, DoubleSupplier speed, DoubleSupplier rotation) {
+  public TeleopTankDrive(TankDrive drivetrain, DoubleSupplier speed,
+                         DoubleSupplier rotation) {
     this.drivetrain = drivetrain;
     this.speed = speed;
     this.rotation = rotation;

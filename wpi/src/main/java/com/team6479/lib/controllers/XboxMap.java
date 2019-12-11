@@ -1,13 +1,13 @@
 package com.team6479.lib.controllers;
 
 /**
- * This is a simple class of constants that contains the basic mappings for buttons on the xbox
- * controller
+ * This is a simple class of constants that contains the basic mappings for
+ * buttons on the xbox controller
  *
  * @author Rashad Ahmed
  * @author Thomas Quillan
- * @deprecated Use {@link com.team6479.lib.wpioverride.XboxController.Axis Axis} and {@link
- *     edu.wpi.first.wpilibj.XboxController.Button Button}
+ * @deprecated Use {@link com.team6479.lib.wpioverride.XboxController.Axis Axis}
+ *     and {@link edu.wpi.first.wpilibj.XboxController.Button Button}
  */
 @Deprecated()
 public class XboxMap {

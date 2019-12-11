@@ -7,7 +7,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
- * This class provides a {@link Button} which gets its state from multiple {@link Button} objects
+ * This class provides a {@link Button} which gets its state from multiple
+ * {@link Button} objects
  *
  * @author Thomas Quillan
  */
@@ -17,8 +18,10 @@ public class MultiButton extends Button {
   /**
    * Create a multibutton for triggering commands.
    *
-   * @param joystick The GenericHID object that has the button (e.g. Joystick, KinectStick, etc)
-   * @param buttonNumbers The button numbers (see {@link GenericHID#getRawButton(int) }
+   * @param joystick The GenericHID object that has the button (e.g. Joystick,
+   *     KinectStick, etc)
+   * @param buttonNumbers The button numbers (see {@link
+   *     GenericHID#getRawButton(int) }
    */
   public MultiButton(GenericHID joystick, int... buttonNumbers) {
     // this.joystick = joystick;

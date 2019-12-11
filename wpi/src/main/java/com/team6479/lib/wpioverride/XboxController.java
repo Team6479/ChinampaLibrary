@@ -12,17 +12,17 @@ public class XboxController extends edu.wpi.first.wpilibj.XboxController {
     @SuppressWarnings({"MemberName", "PMD.SingularField"})
     public final int value;
 
-    Axis(int value) {
-      this.value = value;
-    }
+    Axis(int value) { this.value = value; }
   }
 
   private double deadZone;
 
   /**
-   * Construct an instance of a joystick. The joystick index is the USB port on the drivers station.
+   * Construct an instance of a joystick. The joystick index is the USB port on
+   * the drivers station.
    *
-   * @param port The port on the Driver Station that the joystick is plugged into.
+   * @param port The port on the Driver Station that the joystick is plugged
+   *     into.
    */
   public XboxController(int port) {
     super(port);
@@ -38,7 +38,8 @@ public class XboxController extends edu.wpi.first.wpilibj.XboxController {
     double x;
     double y;
 
-    if (axis == Axis.kLeftJoystickX.value || axis == Axis.kLeftJoystickY.value) {
+    if (axis == Axis.kLeftJoystickX.value ||
+        axis == Axis.kLeftJoystickY.value) {
       x = super.getRawAxis(Axis.kLeftJoystickX.value);
       y = super.getRawAxis(Axis.kLeftJoystickY.value);
     } else {
@@ -60,7 +61,8 @@ public class XboxController extends edu.wpi.first.wpilibj.XboxController {
       y = 0;
     }
 
-    if (axis == Axis.kLeftJoystickX.value || axis == Axis.kRightJoystickX.value) {
+    if (axis == Axis.kLeftJoystickX.value ||
+        axis == Axis.kRightJoystickX.value) {
       return x;
     } else {
       return y;
