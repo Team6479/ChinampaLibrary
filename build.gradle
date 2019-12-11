@@ -16,7 +16,6 @@ allprojects {
 subprojects {
     apply {
         plugin("java")
-        plugin("maven")
         plugin("maven-publish")
     }
 
