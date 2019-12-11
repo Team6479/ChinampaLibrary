@@ -1,11 +1,12 @@
 package com.team6479.lib.pneumatics;
 
-import edu.wpi.first.wpilibj.SendableBase;
+import edu.wpi.first.wpilibj.Sendable;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.smartdashboard.SendableBuilder;
+import edu.wpi.first.wpilibj.smartdashboard.SendableRegistry;
 
 /** Allows multiple {@link Solenoid} objects to be linked together. */
-public class SolenoidGroup extends SendableBase {
+public class SolenoidGroup implements Sendable, AutoCloseable {
   private final Solenoid[] solenoids;
   private static int instances;
 
@@ -18,11 +19,11 @@ public class SolenoidGroup extends SendableBase {
     this.solenoids = solenoids;
 
     for (Solenoid solenoid : solenoids) {
-      addChild(solenoid);
+      SendableRegistry.addChild(this, solenoid);
     }
 
     instances++;
-    setName("SolenoidGroup", instances);
+    SendableRegistry.setName(this, "SolenoidGroup", instances);
   }
 
   @Override

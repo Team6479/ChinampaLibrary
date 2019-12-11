@@ -6,7 +6,10 @@ package com.team6479.lib.controllers;
  *
  * @author Rashad Ahmed
  * @author Thomas Quillan
+ * @deprecated Use {@link com.team6479.lib.wpioverride.XboxController.Axis Axis} and {@link
+ *     edu.wpi.first.wpilibj.XboxController.Button Button}
  */
+@Deprecated()
 public class XboxMap {
 
   // Sticks and Triggers
