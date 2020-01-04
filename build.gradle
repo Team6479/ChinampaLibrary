@@ -1,12 +1,13 @@
 plugins {
     id "java"
+    id "maven"
     id "maven-publish"
     id "edu.wpi.first.GradleRIO" version "2020.1.2" apply false
     id 'com.github.sherter.google-java-format' version '0.8'
 }
 
 repositories {
-  mavenCentral()
+    mavenCentral()
 }
 
 allprojects {
@@ -16,6 +17,7 @@ allprojects {
 subprojects {
     apply {
         plugin("java")
+        plugin("maven")
         plugin("maven-publish")
     }
 
