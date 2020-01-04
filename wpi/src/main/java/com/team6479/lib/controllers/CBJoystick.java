@@ -1,11 +1,10 @@
 package com.team6479.lib.controllers;
 
 import com.team6479.lib.buttons.POVButton;
-import com.team6479.lib.controllers.CBXboxController.Buttons;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.buttons.Button;
-import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import edu.wpi.first.wpilibj2.command.button.Button;
+import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import java.util.HashMap;
 import java.util.Objects;
 
@@ -17,7 +16,7 @@ import java.util.Objects;
  */
 public class CBJoystick extends Joystick {
 
-  private HashMap<Buttons, Button> buttons;
+  private HashMap<Integer, Button> buttons;
   private HashMap<Integer, Button> povButtons;
 
   /**
@@ -27,7 +26,7 @@ public class CBJoystick extends Joystick {
    */
   public CBJoystick(int port) {
     super(port);
-    buttons = new HashMap<Buttons, Button>();
+    buttons = new HashMap<Integer, Button>();
     povButtons = new HashMap<Integer, Button>();
   }
 
@@ -37,10 +36,10 @@ public class CBJoystick extends Joystick {
    * @param button The ID of the button
    * @return A {@link Button} object for the supplied button.
    */
-  public Button getButton(Buttons button) {
+  public Button getButton(int button) {
 
     if (!buttons.containsKey(button)) {
-      buttons.put(button, new JoystickButton(this, button.value));
+      buttons.put(button, new JoystickButton(this, button));
     }
 
     return buttons.get(button);

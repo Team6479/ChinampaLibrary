@@ -3,8 +3,7 @@ package com.team6479.lib.controllers;
 import com.team6479.lib.buttons.POVButton;
 import com.team6479.lib.wpioverride.XboxController;
 import edu.wpi.first.wpilibj.GenericHID;
-import edu.wpi.first.wpilibj.buttons.Button;
-import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import java.util.HashMap;
 import java.util.Objects;
 
@@ -15,28 +14,8 @@ import java.util.Objects;
  * @author Thomas Quillan
  */
 public class CBXboxController extends XboxController {
-  /** Represents a digital button on an XboxController. */
-  public enum Buttons {
-    kBumperLeft(5),
-    kBumperRight(6),
-    kStickLeft(9),
-    kStickRight(10),
-    kA(1),
-    kB(2),
-    kX(3),
-    kY(4),
-    kBack(7),
-    kStart(8);
-
-    public final int value;
-
-    Buttons(int value) {
-      this.value = value;
-    }
-  }
-
-  private HashMap<Buttons, Button> buttons;
-  private HashMap<Integer, Button> povButtons;
+  private HashMap<Button, edu.wpi.first.wpilibj2.command.button.Button> buttons;
+  private HashMap<Integer, edu.wpi.first.wpilibj2.command.button.Button> povButtons;
 
   /**
    * Create a {@link XboxController} with extensions for command based programming.
@@ -45,8 +24,8 @@ public class CBXboxController extends XboxController {
    */
   public CBXboxController(int port) {
     super(port);
-    buttons = new HashMap<Buttons, Button>();
-    povButtons = new HashMap<Integer, Button>();
+    buttons = new HashMap<Button, edu.wpi.first.wpilibj2.command.button.Button>();
+    povButtons = new HashMap<Integer, edu.wpi.first.wpilibj2.command.button.Button>();
   }
 
   /**
@@ -55,7 +34,7 @@ public class CBXboxController extends XboxController {
    * @param button The ID of the button
    * @return A {@link Button} object for the supplied button.
    */
-  public Button getButton(Buttons button) {
+  public edu.wpi.first.wpilibj2.command.button.Button getButton(Button button) {
 
     if (!buttons.containsKey(button)) {
       buttons.put(button, new JoystickButton(this, button.value));
@@ -72,7 +51,8 @@ public class CBXboxController extends XboxController {
    * @param fuzzy If set to True angle will be checked to be within plus or minus 45 degrees
    * @return A {@link POVButton} object for the supplied arguments.
    */
-  public Button getPOVButton(int pov, int angle, boolean fuzzy) {
+  public edu.wpi.first.wpilibj2.command.button.Button getPOVButton(
+      int pov, int angle, boolean fuzzy) {
     int povHash = Objects.hash(pov, angle, fuzzy);
 
     if (!povButtons.containsKey(povHash)) {
@@ -89,7 +69,7 @@ public class CBXboxController extends XboxController {
    * @param fuzzy If set to True angle will be checked to be within plus or minus 45 degrees
    * @return A {@link POVButton} object for the supplied arguments.
    */
-  public Button getPOVButton(int angle, boolean fuzzy) {
+  public edu.wpi.first.wpilibj2.command.button.Button getPOVButton(int angle, boolean fuzzy) {
     return this.getPOVButton(0, angle, fuzzy);
   }
 }

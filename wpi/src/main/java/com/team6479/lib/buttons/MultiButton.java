@@ -1,16 +1,19 @@
 package com.team6479.lib.buttons;
 
-import edu.wpi.first.wpilibj.GenericHID;
-import edu.wpi.first.wpilibj.buttons.Button;
-import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import java.util.ArrayList;
 import java.util.Arrays;
+import edu.wpi.first.wpilibj.GenericHID;
+import edu.wpi.first.wpilibj2.command.button.Button;
+import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 
 /**
  * This class provides a {@link Button} which gets its state from multiple {@link Button} objects
  *
+ * @deprecated Use Trigger Composition (https://docs.wpilib.org/en/latest/docs/software/commandbased/binding-commands-to-triggers.html#composing-triggers)
+ *
  * @author Thomas Quillan
  */
+@Deprecated
 public class MultiButton extends Button {
   private final ArrayList<Button> buttons;
 

@@ -2,11 +2,12 @@ package com.team6479.lib.pneumatics;
 
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
-import edu.wpi.first.wpilibj.SendableBase;
+import edu.wpi.first.wpilibj.Sendable;
 import edu.wpi.first.wpilibj.smartdashboard.SendableBuilder;
+import edu.wpi.first.wpilibj.smartdashboard.SendableRegistry;
 
 /** Allows multiple {@link DoubleSolenoid} objects to be linked together. */
-public class DoubleSolenoidGroup extends SendableBase {
+public class DoubleSolenoidGroup implements Sendable, AutoCloseable {
   private final DoubleSolenoid[] doubleSolenoids;
   private static int instances;
 
@@ -19,11 +20,11 @@ public class DoubleSolenoidGroup extends SendableBase {
     this.doubleSolenoids = doubleSolenoids;
 
     for (DoubleSolenoid doubleSolenoid : doubleSolenoids) {
-      addChild(doubleSolenoid);
+      SendableRegistry.addChild(this, doubleSolenoid);
     }
 
     instances++;
-    setName("DoubleSolenoidGroup", instances);
+    SendableRegistry.setName(this, "DoubleSolenoidGroup", instances);
   }
 
   @Override
