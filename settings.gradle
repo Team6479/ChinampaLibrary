@@ -1,2 +1,3 @@
 rootProject.name = "ChinampaLibrary"
 include "wpi"
+include "ctre"

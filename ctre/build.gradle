@@ -1,4 +1,4 @@
 dependencies {
-    api wpi.deps.wpilib()
+    api project(":wpi")
     api wpi.deps.vendor.java()
 }
