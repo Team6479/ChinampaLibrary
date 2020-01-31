@@ -31,3 +31,6 @@ dependencies {
   * WPI
     * [Latest Release](https://javadoc.jitpack.io/com/github/Team6479/ChinampaLibrary/wpi/latest/javadoc/)
     * [Latest Development](https://javadoc.jitpack.io/com/github/Team6479/ChinampaLibrary/wpi/master-SNAPSHOT/javadoc/)
+  * CTRE
+    * [Latest Release](https://javadoc.jitpack.io/com/github/Team6479/ChinampaLibrary/ctre/latest/javadoc/)
+    * [Latest Development](https://javadoc.jitpack.io/com/github/Team6479/ChinampaLibrary/ctre/master-SNAPSHOT/javadoc/)
