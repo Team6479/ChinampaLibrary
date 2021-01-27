@@ -54,6 +54,18 @@ public class DoubleSolenoidGroup implements Sendable, AutoCloseable {
     return doubleSolenoids[0].get();
   }
 
+  /**
+   * Toggle the value of the solenoid.
+   *
+   * <p>If the solenoid is set to forward, it'll be set to reverse. If the solenoid is set to
+   * reverse, it'll be set to forward. If the solenoid is set to off, nothing happens.
+   */
+  public void toggle() {
+    for (DoubleSolenoid doubleSolenoid : doubleSolenoids) {
+      doubleSolenoid.toggle();
+    }
+  }
+
   @Override
   public void initSendable(SendableBuilder builder) {
     builder.setSmartDashboardType("Double Solenoid");

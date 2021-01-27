@@ -54,6 +54,18 @@ public class SolenoidGroup implements Sendable, AutoCloseable {
   }
 
   /**
+   * Toggle the value of the solenoid.
+   *
+   * <p>If the solenoid is set to on, it'll be turned off. If the solenoid is set to off, it'll be
+   * turned on.
+   */
+  public void toggle() {
+    for (Solenoid solenoid : solenoids) {
+      solenoid.toggle();
+    }
+  }
+
+  /**
    * Set the pulse duration in the PCM. This is used in conjunction with the startPulse method to
    * allow the PCM to control the timing of a pulse. The timing can be controlled in 0.01 second
    * increments.
