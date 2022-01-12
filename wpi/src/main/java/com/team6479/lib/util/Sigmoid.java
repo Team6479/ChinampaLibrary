@@ -34,8 +34,7 @@ public class Sigmoid {
    *
    * @param center The value at zero [0, 0.5]
    * @param damping The damping constant; higher = more gradual and thus wider [0, 1]
-   * @param limit Stretches the limit of the function vertically; higher = more vertical stretching
-   *        [0, 1]
+   * @param limit Stretches the limit of the function vertically; higher = more vertical stretching [0, 1]
    * @param invert Up or down (true = invert)
    * @param hshift Horizontal translation
    * @param vshift Vertical translation

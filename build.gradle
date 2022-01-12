@@ -4,7 +4,6 @@ plugins {
     id "maven"
     id "maven-publish"
     id "edu.wpi.first.GradleRIO" version "2021.1.2" apply false
-    id "com.github.sherter.google-java-format" version "0.9"
 }
 
 repositories {
