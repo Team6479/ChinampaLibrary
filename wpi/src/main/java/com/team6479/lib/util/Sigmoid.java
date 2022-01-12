@@ -36,7 +36,7 @@ public class Sigmoid {
      * @param hshift Horizontal translation
      * @param vshift Vertical translation
      */
-    public Sigmoid(double center, double damping, double limit, boolean invert, double hshift, double vshift) {
+    public Sigmoid (double center, double damping, double limit, boolean invert, double hshift, double vshift) {
         c = center * 2; // (0, c/2)
         d = 1 / damping; // the inverse acts more intuitively
         a = (invert ? -1 : 1) * limit / 2;
@@ -51,7 +51,7 @@ public class Sigmoid {
      * @param x X value to plug into the function
      * @return Y value returned from the function
      */
-    public double calculate(double x) {
+    public double calculate (double x) {
         return (a * c / (1 + Math.pow(Math.E, -d * (x - h)))) + k;
     }
 }
