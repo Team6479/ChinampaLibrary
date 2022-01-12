@@ -47,6 +47,9 @@ public class Sigmoid {
     /**
      * Calculates the function's value at x
      * See the Desmos graph for a proper representation
+     *
+     * @param x X value to plug into the function
+     * @return Y value returned from the function
      */
     public double calculate(double x) {
         return (a * c / (1 + Math.pow(Math.E, -d * (x - h)))) + k;
