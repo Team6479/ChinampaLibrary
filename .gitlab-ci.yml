@@ -3,4 +3,5 @@ image: gradle:jdk11
 test:
   stage: test
   script:
+  - ./gradlew goJF
   - ./gradlew build
