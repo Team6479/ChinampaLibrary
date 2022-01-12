@@ -27,11 +27,11 @@ public class Sigmoid {
      * If other values are changed from their defaults, a constant may not produce its exact expected behavior
      * For example, changing limit will cause the y-intercept from (0, center)
      *
-     * Note that exceeding the specified bounds may couse unexpected behavior and should be avoided
+     * Note that exceeding the specified bounds may cause unexpected behavior and should be avoided
      * If a logistic function cannot be constructed w/o exceeding the specified bounds, this class should be ammended accordingly
-     * @param center The value at zero (0.5, >=0)
-     * @param damping The damping constant; higher = more gradual and thus wider (1, >=0)
-     * @param limit Stretches the limit of the function vertically; higher = more vertical stretching (1, >=0)
+     * @param center The value at zero [0, 0.5]
+     * @param damping The damping constant; higher = more gradual and thus wider [0, 1]
+     * @param limit Stretches the limit of the function vertically; higher = more vertical stretching [0, 1]
      * @param invert Up or down (true = invert)
      * @param hshift Horizontal translation
      * @param vshift Vertical translation
