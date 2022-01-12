@@ -11,7 +11,6 @@ import java.util.Map;
  * @author Thomas Quillan
  * @author Leo Wilson
  */
-@Deprecated
 public final class Limelight {
   public enum LEDState {
     /** Use the LED Mode set in the current pipeline */
